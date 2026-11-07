@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2F81F7&center=true&vCenter=true&width=600&lines=Data+Engineer+%7C+AI%2FML+Enthusiast;Building+Agentic+RAG+%26+LLM+Apps;Snowflake+%E2%80%A2+Python+%E2%80%A2+Data+Pipelines;Based+in+Boston%2C+MA" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2F81F7&center=true&vCenter=true&width=600&lines=Software+Engineer+%7C+AI%2FML+Enthusiast;" alt="Typing SVG" />
   </a>
 </p>
 
@@ -16,9 +16,6 @@
 
 ### 🚀 About Me
 - 🎓 Graduate student at **Northeastern University**, Boston
-- 🔭 Working on **agentic RAG**, LLM-powered apps, and data pipelines
-- 🌱 Exploring **Snowflake / Snowpark**, AI safety, and iOS with Swift
-- 💬 Ask me about **Python, data engineering, and information retrieval**
 
 ### 🛠️ Tech Stack
 <p align="center">

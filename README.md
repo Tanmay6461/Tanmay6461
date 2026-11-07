@@ -36,19 +36,12 @@
 
 ---
 
-### 📊 GitHub Stats
+### 📊 Contributions
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=Tanmay6461&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tanmay6461&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=Tanmay6461&theme=tokyonight&hide_border=true" />
-</p>
-
-### 📈 Contribution Graph
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Tanmay6461&theme=tokyo-night&hide_border=true&area=true" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./yearly-contrib/total-dark.svg" />
+  <img alt="Total contributions" src="./yearly-contrib/total-light.svg" />
+</picture>
 </p>
 
 ### 📅 Contributions by Year
@@ -68,8 +61,4 @@
   <img alt="2024 contributions" src="./yearly-contrib/2024-light.svg" />
 </picture>
 <br/><br/>
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Tanmay6461&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&row=1" />
 </p>

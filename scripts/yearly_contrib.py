@@ -18,14 +18,29 @@ QUERY = """query($u:String!,$f:DateTime!,$t:DateTime!){user(login:$u){contributi
 contributionCalendar{totalContributions weeks{contributionDays{date contributionCount contributionLevel}}}}}}"""
 
 
-def fetch(year):
-    body = json.dumps({"query": QUERY, "variables": {
-        "u": USER, "f": f"{year}-01-01T00:00:00Z", "t": f"{year}-12-31T23:59:59Z"}}).encode()
+def gql(query, variables):
+    body = json.dumps({"query": query, "variables": variables}).encode()
     req = urllib.request.Request("https://api.github.com/graphql", body,
                                  {"Authorization": f"bearer {TOKEN}", "Content-Type": "application/json",
                                   "User-Agent": "yearly-contrib-script"})
-    data = json.load(urllib.request.urlopen(req))
-    return data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+    return json.load(urllib.request.urlopen(req))["data"]["user"]
+
+
+def fetch(year):
+    data = gql(QUERY, {"u": USER, "f": f"{year}-01-01T00:00:00Z", "t": f"{year}-12-31T23:59:59Z"})
+    return data["contributionsCollection"]["contributionCalendar"]
+
+
+def render_total(total, since, theme):
+    c = THEMES[theme]
+    font = 'font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif"'
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 300 100">'
+            f'<text x="150" y="48" text-anchor="middle" {font} font-size="34" font-weight="700" '
+            f'fill="{c["levels"][3]}">{total:,}</text>'
+            f'<text x="150" y="72" text-anchor="middle" {font} font-size="14" font-weight="600" '
+            f'fill="{c["text"]}">Total Contributions</text>'
+            f'<text x="150" y="90" text-anchor="middle" {font} font-size="11" fill="{c["text"]}">'
+            f'{since} – Present</text></svg>')
 
 
 def render(year, cal, theme):
@@ -57,9 +72,19 @@ def render(year, cal, theme):
 
 
 os.makedirs(OUT, exist_ok=True)
-for year in range(START_YEAR, dt.date.today().year + 1):
+created = dt.date.fromisoformat(gql("query($u:String!){user(login:$u){createdAt}}", {"u": USER})["createdAt"][:10])
+total = 0
+for year in range(created.year, dt.date.today().year + 1):
     cal = fetch(year)
+    total += cal["totalContributions"]
+    if year < START_YEAR:
+        continue
     for theme in THEMES:
         with open(f"{OUT}/{year}-{theme}.svg", "w") as f:
             f.write(render(year, cal, theme))
     print(year, cal["totalContributions"])
+
+for theme in THEMES:
+    with open(f"{OUT}/total-{theme}.svg", "w") as f:
+        f.write(render_total(total, created.strftime("%b %Y"), theme))
+print("total", total)

@@ -51,12 +51,12 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Tanmay6461&theme=tokyo-night&hide_border=true&area=true" />
 </p>
 
-### 🐍 Contribution Snake
+### 🌆 3D Contribution Graph
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Tanmay6461/Tanmay6461/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Tanmay6461/Tanmay6461/output/github-snake.svg" />
-    <img alt="contribution snake" src="https://raw.githubusercontent.com/Tanmay6461/Tanmay6461/output/github-snake.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-gitblue.svg" />
+    <img alt="3D contribution graph" src="./profile-3d-contrib/profile-night-rainbow.svg" />
   </picture>
 </p>
 

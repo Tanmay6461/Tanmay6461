@@ -1,4 +1,4 @@
-name: Generate 3D contribution graph
+name: Generate yearly contribution graphs
 
 on:
   schedule:
@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - uses: yoshi389111/github-profile-3d-contrib@latest
+      - run: python3 scripts/yearly_contrib.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
@@ -22,6 +22,6 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add -A .
-          git commit -m "Update 3D contribution graph" || exit 0
+          git add yearly-contrib
+          git commit -m "Update yearly contribution graphs" || exit 0
           git push

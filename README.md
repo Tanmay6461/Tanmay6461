@@ -51,13 +51,23 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Tanmay6461&theme=tokyo-night&hide_border=true&area=true" />
 </p>
 
-### 🌆 3D Contribution Graph
+### 📅 Contributions by Year
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-green-animate.svg" />
-    <img alt="3D contribution graph" src="./profile-3d-contrib/profile-night-rainbow.svg" />
-  </picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./yearly-contrib/2026-dark.svg" />
+  <img alt="2026 contributions" src="./yearly-contrib/2026-light.svg" />
+</picture>
+<br/><br/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./yearly-contrib/2025-dark.svg" />
+  <img alt="2025 contributions" src="./yearly-contrib/2025-light.svg" />
+</picture>
+<br/><br/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./yearly-contrib/2024-dark.svg" />
+  <img alt="2024 contributions" src="./yearly-contrib/2024-light.svg" />
+</picture>
+<br/><br/>
 </p>
 
 <p align="center">
